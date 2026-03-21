@@ -14,6 +14,7 @@ export async function GET() {
     return Response.json({ message: "Server error" }, { status: 500 });
   }
 }
+
 export async function POST(req) {
   try {
     const token = getBearerToken(req);
