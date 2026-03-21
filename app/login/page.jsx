@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const [form, setForm] = useState({ email: "", password: "" });
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
@@ -32,6 +34,7 @@ export default function Login() {
 
       localStorage.setItem("token", data.token);
       setStatus("Logged in successfully.");
+      router.push("/dashboard");
     } catch {
       setStatus("Unable to login right now.");
     } finally {

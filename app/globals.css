@@ -276,6 +276,37 @@ a {
   gap: 8px;
 }
 
+.stats-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  padding: 16px;
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.stat-value {
+  margin: 8px 0 0;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.dashboard-list-panel {
+  margin-top: 18px;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
