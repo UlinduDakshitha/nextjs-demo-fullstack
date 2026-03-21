@@ -1,66 +1,64 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="page-shell">
+      <header className="topbar">
+        <div className="brand">Bibliotek</div>
+        <nav className="nav-links">
+          <Link href="/books" className="nav-pill">
+            Collection
+          </Link>
+          <Link href="/login" className="nav-pill">
+            Login
+          </Link>
+          <Link href="/register" className="nav-pill">
+            Register
+          </Link>
+        </nav>
+      </header>
+
+      <section className="content">
+        <h1 className="hero-title">
+          A Thoughtful Space For Your Library Workflow
+        </h1>
+        <p className="hero-subtitle">
+          Organize every title, track updates, and keep your reading inventory
+          in sync through a single calm interface.
+        </p>
+
+        <div className="feature-grid">
+          <article className="panel">
+            <h3>Curated Catalog</h3>
+            <p>
+              Maintain clean records for books and authors with a quick edit
+              cycle.
+            </p>
+          </article>
+          <article className="panel">
+            <h3>Fast Updates</h3>
+            <p>
+              Add new arrivals or adjust metadata in seconds using a focused
+              layout.
+            </p>
+          </article>
+          <article className="panel">
+            <h3>Quiet Aesthetic</h3>
+            <p>
+              Warm tones and clear typography designed to reduce UI fatigue.
+            </p>
+          </article>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="actions">
+          <Link href="/books" className="btn btn-primary">
+            Open Collection
+          </Link>
+          <Link href="/register" className="btn btn-secondary">
+            Create Account
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
