@@ -5,7 +5,7 @@ import { generateToken } from "@/lib/auth";
 
 export async function POST(req) {
   const { email, password } = await req.json();
-
+  
   const user = await User.findOne({ where: { email } });
 
   if (!user) {
