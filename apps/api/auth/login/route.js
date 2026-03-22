@@ -3,7 +3,6 @@
 import bcrypt from "bcryptjs";
 import { generateToken } from "@/lib/auth";
 
-
 export async function POST(req) {
   const { email, password } = await req.json();
 
